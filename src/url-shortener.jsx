@@ -80,6 +80,9 @@ export default function UrlShortener() {
     }
     setOriginalUrl("");
     setCustomAlias("");
+    const timeout = setTimeout(() => {
+      setShortUrl("");
+    }, [3000]);
   };
 
   // count hits
@@ -95,6 +98,7 @@ export default function UrlShortener() {
 
   // for portal
   const openPortal = () => {
+    if (!shortUrl) return alert("Please shorten your URL first");
     setOpen(true);
   };
   const closePortal = () => {
