@@ -39,7 +39,8 @@ export default function UrlShortener() {
     if (!alias) {
       return;
     }
-    setCustomAlias(alias);
+    const finalAlias = alias.replaceAll(" ", "-");
+    setCustomAlias(finalAlias);
   };
 
   // shorten url
